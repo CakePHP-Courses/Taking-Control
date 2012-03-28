@@ -13,13 +13,13 @@ endif;
 ?>
 <p>
 <?php
-	if (version_compare(PHP_VERSION, '5.2.6', '>=')):
+	if (version_compare(PHP_VERSION, '5.2.8', '>=')):
 		echo '<span class=\"notice success\">';
-			echo __d('cake_dev', 'Your version of PHP is 5.2.6 or higher.');
+			echo __d('cake_dev', 'Your version of PHP is 5.2.8 or higher.');
 		echo '</span>';
 	else:
 		echo '<span class=\"notice\">';
-			echo __d('cake_dev', 'Your version of PHP is too low. You need PHP 5.2.6 or higher to use CakePHP.');
+			echo __d('cake_dev', 'Your version of PHP is too low. You need PHP 5.2.8 or higher to use CakePHP.');
 		echo '</span>';
 	endif;
 ?>
@@ -39,10 +39,10 @@ endif;
 </p>
 <p>
 <?php
-	\$settings = Cache::settings();
+	\$settings = Cache::settings('_cake_core_');
 	if (!empty(\$settings)):
 		echo '<span class=\"notice success\">';
-				echo __d('cake_dev', 'The %s is being used for caching. To change the config edit APP/Config/core.php ', '<em>'. \$settings['engine'] . 'Engine</em>');
+				echo __d('cake_dev', 'The %s is being used for core caching. To change the config edit APP/Config/core.php ', '<em>'. \$settings['engine'] . 'Engine</em>');
 		echo '</span>';
 	else:
 		echo '<span class=\"notice\">';

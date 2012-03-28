@@ -28,7 +28,7 @@
 
 		echo $this->Html->css('bootstrap');
 
-		echo $scripts_for_layout;
+		echo $this->fetch('scripts');
 	?>
 </head>
 <body>
@@ -39,7 +39,7 @@
 		<div id="content" class="row">
 			<?php echo $this->Session->flash(); ?>
 
-			<?php echo $content_for_layout; ?>
+			<?php echo $this->fetch('content'); ?>
 
 		</div>
 		<div id="footer">
