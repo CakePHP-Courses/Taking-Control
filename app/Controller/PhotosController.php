@@ -16,6 +16,7 @@ class PhotosController extends AppController {
 	public function index() {
 		$this->Photo->recursive = 0;
 		$this->set('photos', $this->paginate());
+		$this->set('_serialize', array('photos'));
 	}
 
 /**
@@ -30,6 +31,7 @@ class PhotosController extends AppController {
 			throw new NotFoundException(__('Invalid photo'));
 		}
 		$this->set('photo', $this->Photo->read(null, $id));
+		$this->set('_serialize', array('photo'));
 	}
 
 /**

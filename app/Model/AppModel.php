@@ -4,7 +4,7 @@ App::uses('Model', 'Model');
 class AppModel extends Model {
 
 	public $actsAs = array('Containable');
-	/*
+
     public function find($type = 'first', $params = array()) {
         return $this->cacheFind($this->cachePrefix(), $type, $params);
     }
@@ -36,5 +36,5 @@ class AppModel extends Model {
         }
         return parent::_clearCache();
     }
-	*/
+
 }

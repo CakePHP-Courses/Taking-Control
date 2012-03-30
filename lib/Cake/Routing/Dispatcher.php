@@ -217,6 +217,7 @@ class Dispatcher {
 			if (!file_exists($filename)) {
 				$filename = CACHE . 'views' . DS . $path . '_index.php';
 			}
+
 			if (file_exists($filename)) {
 				$controller = null;
 				$view = new View($controller);

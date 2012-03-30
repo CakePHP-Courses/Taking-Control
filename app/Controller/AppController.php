@@ -8,7 +8,7 @@ class AppController extends Controller {
 		'Session',
 		'Html',
 		'Text',
-		//'Cache'
+		'Cache'
 	);
 
 	public $components = array(
@@ -19,5 +19,5 @@ class AppController extends Controller {
 		'DebugKit.Toolbar'
 	);
 
-	//public $cacheAction = '+10 seconds';
+	public $cacheAction = '+10 seconds';
 }
