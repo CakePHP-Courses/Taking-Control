@@ -12,7 +12,7 @@ class AppController extends Controller {
 	);
 
 	public $components = array(
-		'Security' => array('csrfUseOnce' => true),
+		'Security' => array('blackHoleCallback' => '_blackhole'),
 		'RequestHandler',
 		'Session',
 		'Auth',
@@ -20,4 +20,17 @@ class AppController extends Controller {
 	);
 
 	public $cacheAction = '+10 seconds';
+
+
+	public function _blackhole() {
+		if ($this->request->is('post') || $this->request->is('put')) {
+			$this->Session->setFlash('Please post again');
+			$this->response->statusCode(403);
+			$response = $this->render();
+			$response->send();
+			$this->_stop();
+		}
+		throw new BadRequestException('Blackholed');
+	}
+
 }
